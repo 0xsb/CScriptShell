@@ -1,6 +1,6 @@
 ### CScriptShell, a Powershell Host running within cscript.exe
 
-This code let's you Bypass Application Whitelisting and Powershell.exe restrictions and gives you a shell that almost looks and feels like a normal Powershell session (Get-Credential, PSSessions -> Works, Tab Completion -> Unfortunately not).
+This code let's you Bypass Application Whitelisting and Powershell.exe restrictions and gives you a shell that almost looks and feels like a normal Powershell session (Get-Credential, PSSessions -> Works).
 Basicly the same code as MSBuildShell (https://github.com/Cn33liz/MSBuildShell), but now using a recent technique found by @SubTee which lets you run .NET code inside JScript or VbScript.
 
 
