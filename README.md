@@ -18,7 +18,7 @@ Set-Content key.snk -Value $Content -Encoding Byte
 Compile DLL within PowerShell or cmd.exe:
 C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe /r:System.EnterpriseServices.dll,System.Management.Automation.dll /target:library /out:CScriptShell.dll /keyfile:key.snk CScriptShell.cs
 
-To load the JScriptShell from the Commandline:
+To load the CScriptShell from the Commandline:
 cscript.exe CScriptShell.js
 ```
 
