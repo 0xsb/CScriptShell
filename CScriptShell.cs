@@ -36,37 +36,6 @@ namespace Delivery
     {
         public Bypass() { Console.WriteLine("I am a basic COM Object"); }
 		
-		[DllImport("ntdll.dll")]
-		private static extern int RtlGetVersion(out RTL_OSVERSIONINFOEX lpVersionInformation);
-
-		[StructLayout(LayoutKind.Sequential)]
-		internal struct RTL_OSVERSIONINFOEX
-		{
-			internal uint dwOSVersionInfoSize;
-			internal uint dwMajorVersion;
-			internal uint dwMinorVersion;
-			internal uint dwBuildNumber;
-			internal uint dwPlatformId;
-			[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
-			internal string szCSDVersion;
-		}
-
-		public static decimal RtlGetVersion()
-		{
-			RTL_OSVERSIONINFOEX osvi = new RTL_OSVERSIONINFOEX();
-			osvi.dwOSVersionInfoSize = (uint)Marshal.SizeOf(osvi);
-			//const string version = "Microsoft Windows";
-			if (RtlGetVersion(out osvi) == 0)
-			{
-				string Version = osvi.dwMajorVersion + "." + osvi.dwMinorVersion;
-				return decimal.Parse(Version, CultureInfo.InvariantCulture);
-			}
-			else
-			{
-				return -1;
-			}
-		}
-	
 		public static void PrintBanner()
 		{
 			Console.BackgroundColor = ConsoleColor.DarkBlue;
@@ -84,9 +53,6 @@ namespace Delivery
         {
 			Console.Title = "Windows CScriptShell";
 			PrintBanner();
-			string LatestOSVersion = "6.3";
-			decimal latestOSVersionDec = decimal.Parse(LatestOSVersion, CultureInfo.InvariantCulture);
-
 			PowerListener.CommandShell();
         }
 
@@ -95,9 +61,6 @@ namespace Delivery
         {
 			Console.Title = "Windows CScriptShell";
 			PrintBanner();
-			string LatestOSVersion = "6.3";
-			decimal latestOSVersionDec = decimal.Parse(LatestOSVersion, CultureInfo.InvariantCulture);
-
 			PowerListener.CommandShell();
 		}
 	}
