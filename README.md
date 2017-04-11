@@ -27,3 +27,4 @@ More info on this Bypass can be found in the following Blogpost from @SubTee: ht
 Powershell Host Code: Original from Microsoft (MSDN), modified by Cn33liz, Twitter: @Cneelis
 
 Note: This will only work on if .NET 3.5 is installed.
+The System.Management.Automation.dll is only needed to compile the CScriptShell source code. You don't need it to run the shell.
